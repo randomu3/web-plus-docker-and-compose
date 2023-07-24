@@ -1,4 +1,4 @@
-export const URL = "http://167.235.140.175:3001";
+export const URL = "http://api.grottie.nomoredomains.work";
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
@@ -11,7 +11,7 @@ export const URL_REGULAR =
 
 export const getBase64 = (file) => {
   return new Promise((resolve, reject) => {
-    const reader = new FileReader();
+    const reader = new FileReader();  
     reader.readAsDataURL(file);
     reader.onload = () => resolve(reader.result);
     reader.onerror = (error) => reject(error);

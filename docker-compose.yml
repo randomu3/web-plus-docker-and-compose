@@ -12,6 +12,7 @@ services:
       - type: bind
         source: ./backend/src
         target: /app/src
+      - /app/node_modules
     ports:
       - '4000:3000'
     restart: always
@@ -41,6 +42,10 @@ services:
     container_name: postgres
     image: postgres:14-alpine
     env_file: .env
+    environment:
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: student
+      POSTGRES_DB: nest_project
     restart: always
     volumes:
       - postgres_data:/data/postgres
@@ -61,4 +66,4 @@ volumes:
   postgres_data:
 networks:
   backend:
-  frontend: 
+  frontend:

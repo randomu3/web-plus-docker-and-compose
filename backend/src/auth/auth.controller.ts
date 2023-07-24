@@ -16,7 +16,7 @@ export class AuthController {
    async signin(@Req() req: RequestUser): Promise<LoginResponse> {
       console.log(req.user)
       return await this.authService.auth(req.user.id);
-   }
+   }  
 
    @Post("signup")
    async signup(@Body() createUserDto: CreateUserDto): Promise<{ user: Omit<User, "password">, token: LoginResponse }> {

@@ -3,11 +3,11 @@ version: '3'
 services:
   backend:
     container_name: backend
-    build:
-      context: backend
-      dockerfile: Dockerfile.pub
-    # image: demiz/backend-release:1.0.3
-    image: backend-release:1.0.3
+    # build:
+    #   context: backend
+    #   dockerfile: Dockerfile.pub
+    image: demiz/backend-release:1.0.3
+    # image: backend-release:1.0.3
     env_file: .env
     volumes:
       - type: bind
@@ -22,11 +22,11 @@ services:
 
   frontend:
     container_name: frontend
-    build:
-      context: frontend
-      dockerfile: Dockerfile.pub
-    # image: demiz/frontend-release:1.0.3
-    image: frontend-release:1.0.3
+    # build:
+    #   context: frontend
+    #   dockerfile: Dockerfile.pub
+    image: demiz/frontend-release:1.0.3
+    # image: frontend-release:1.0.3
     env_file: .env
     environment:
       CHOKIDAR_USEPOLLING: "true"

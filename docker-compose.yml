@@ -5,8 +5,9 @@ services:
     container_name: backend
     build:
       context: backend
-      dockerfile: Dockerfile.dev
-    image: backend
+      dockerfile: Dockerfile.pub
+    # image: demiz/backend-release:1.0.3
+    image: backend-release:1.0.3
     env_file: .env
     volumes:
       - type: bind
@@ -23,8 +24,9 @@ services:
     container_name: frontend
     build:
       context: frontend
-      dockerfile: Dockerfile.dev
-    image: frontend
+      dockerfile: Dockerfile.pub
+    # image: demiz/frontend-release:1.0.3
+    image: frontend-release:1.0.3
     env_file: .env
     environment:
       CHOKIDAR_USEPOLLING: "true"
@@ -46,6 +48,8 @@ services:
       POSTGRES_USER: student
       POSTGRES_PASSWORD: student
       POSTGRES_DB: nest_project
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
     restart: always
     volumes:
       - postgres_data:/data/postgres
@@ -61,9 +65,9 @@ services:
       - postgres
     networks:
       - backend
-
+      
 volumes:
   postgres_data:
 networks:
   backend:
-  frontend:
+  frontend: 

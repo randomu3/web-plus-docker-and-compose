@@ -48,6 +48,8 @@ services:
       POSTGRES_USER: student
       POSTGRES_PASSWORD: student
       POSTGRES_DB: nest_project
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
     restart: always
     volumes:
       - postgres_data:/data/postgres

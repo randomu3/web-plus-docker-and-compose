@@ -8,8 +8,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const configService = app.get(ConfigService);
-  const port = configService.get('PORT') || 3000;
-
+  const port = configService.get('API_PORT');
+  console.log(configService.get('JWT_SECRET'));
   await app.listen(port);
 }
 

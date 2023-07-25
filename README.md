@@ -1,3 +1,3 @@
-IP адрес x.x.x.x
-Frontend https://...
-Backend https://...
+IP адрес 51.250.106.123
+Frontend https://51.250.106.123:8081
+Backend https://51.250.106.123:4000

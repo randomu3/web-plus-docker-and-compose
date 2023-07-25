@@ -3,16 +3,10 @@ version: '3'
 services:
   backend:
     container_name: backend
-    # build:
-    #   context: backend
-    #   dockerfile: Dockerfile.pub
     image: demiz/backend-release:1.0.3
-    # image: backend-release:1.0.3
     env_file: .env
     volumes:
-      - type: bind
-        source: ./backend/src
-        target: /app/src
+      - ./backend/src:/app/src
       - /app/node_modules
     ports:
       - '4000:4000'
@@ -22,18 +16,12 @@ services:
 
   frontend:
     container_name: frontend
-    # build:
-    #   context: frontend
-    #   dockerfile: Dockerfile.pub
     image: demiz/frontend-release:1.0.3
-    # image: frontend-release:1.0.3
     env_file: .env
     environment:
       CHOKIDAR_USEPOLLING: "true"
     volumes:
-      - type: bind
-        source: ./frontend/src
-        target: /app/src
+      - ./frontend/src:/app/src
     ports:
       - '8080:8080'
     restart: always

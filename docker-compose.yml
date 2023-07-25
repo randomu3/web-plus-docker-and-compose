@@ -12,7 +12,7 @@ services:
       - '4000:4000'
     restart: always
     networks:
-      - app_network
+      - backend
 
   frontend:
     container_name: frontend
@@ -26,7 +26,7 @@ services:
       - '8080:8080'
     restart: always
     networks:
-      - app_network
+      - frontend
 
   postgres:
     container_name: postgres
@@ -36,7 +36,7 @@ services:
     volumes:
       - postgres_data:/data/postgres
     networks:
-      - app_network
+      - backend
 
   adminer:
     image: adminer
@@ -46,10 +46,10 @@ services:
     depends_on:
       - postgres
     networks:
-      - app_network
+      - backend
 
 volumes:
   postgres_data:
-
 networks:
-  app_network:
+  backend:
+  frontend:

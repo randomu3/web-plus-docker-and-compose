@@ -1,4 +1,4 @@
-export const URL = "http://bk.grottie.nomoredomains.xyz";
+export const URL = "http://api.grottie.nomoredomains.work";
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
